@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material Design default colors -->
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="blue">#0066CC</color>
+    <color name="light_blue">#1976D2</color>
+    <color name="dark_blue">#003366</color>
+
+    <!-- App colors -->
+
+    <color name="start_green">#4CAF50</color>
+
+    <color name="background_color">#F5F5F5</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="video_background">#E0E0E0</color>
+
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>

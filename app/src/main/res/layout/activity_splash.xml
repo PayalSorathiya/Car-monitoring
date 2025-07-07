@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bmw_splash_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <ImageView
+        android:id="@+id/ivBmwLogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="32dp"
+
+        android:src="@mipmap/ic_launcher"
+        android:contentDescription="BMW Logo" />
+
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/tvAppTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="BMW AI ANALYSIS"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Interior Camera Intelligence"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:indeterminateTint="@color/light_blue" />
+
+        <TextView
+            android:id="@+id/tvLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Initializing AI System..."
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvAiStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

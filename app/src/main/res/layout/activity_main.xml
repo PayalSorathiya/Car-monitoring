@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+        <!-- Video Display Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+
+
+                <!-- Video Player View for smooth playback -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="8dp">
+
+                    <!-- ExoPlayer PlayerView -->
+                    <com.google.android.exoplayer2.ui.PlayerView
+                        android:id="@+id/playerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/video_background"
+                        app:resize_mode="fit"
+                        app:use_controller="false" />
+
+                    <!-- Overlay ImageView for bounding boxes -->
+                    <ImageView
+                        android:id="@+id/ivVideoFrame"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="ML Detection Overlay"
+                        android:scaleType="matrix"
+                        android:visibility="gone" />
+
+                </FrameLayout>
+
+                <!-- Video Status -->
+                <TextView
+                    android:id="@+id/tvVideoStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="No video loaded"
+                    android:fontFamily="sans-serif-light"
+
+                    android:textColor="@color/secondary_text"
+                    android:textSize="12sp" />
+
+                <!-- Frame Info -->
+                <TextView
+                    android:id="@+id/tvFrameInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Frame: 0ms / 0ms"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Controls Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="Controls"
+                        android:textColor="@color/primary_text"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-light"
+
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <!-- Video Selection Button -->
+                        <Button
+                            android:id="@+id/btnSelectVideo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/blue"
+                            android:padding="12dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Select Video"
+                            android:textColor="@color/white" />
+
+                        <!-- Start/Stop Button -->
+                        <Button
+                            android:id="@+id/btnStartStop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/start_green"
+                            android:enabled="false"
+                            android:padding="12dp"
+                            android:text="Start"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+                    <!-- Processing Status -->
+                    <TextView
+                        android:id="@+id/tvProcessingStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Ready to process"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <!-- Summary Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:fillViewport="true"
+                android:scrollbars="vertical"
+                android:fadeScrollbars="false"
+                android:scrollbarStyle="insideOverlay">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="🧠 AI-powered analysis will appear here after video processing..."
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:layout_marginBottom="10dp"
+                        android:lineSpacingExtra="4dp"
+                        android:fontFamily="sans-serif-light"
+                        android:textIsSelectable="true"
+                        android:scrollHorizontally="false"/>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>
